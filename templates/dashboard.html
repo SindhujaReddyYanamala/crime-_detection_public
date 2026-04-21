@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <img src="{% static 'img/favicon.png' %}" alt="logo">
+            <h1 id="nav-title">Cyber Vision</h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="javascript:void(0)">Dashboard</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'live' %}">Live</a></li>
+              
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section id="upload" class="upload">
+        <div id="particles-js"></div>
+        <div class="section-title" data-aos="fade-up">
+            <h2>Welcome</h2>
+            <p>You can upload Video or Start Camera</p>
+        </div>
+        <div class="option" data-aos="fade-up">
+            <form method="POST" enctype="multipart/form-data" id="vid_form">
+                {% csrf_token %}
+                <input type="file" accept=".mp4" name="video" required id="id_vid" hidden>
+                <label for="id_vid" class="fBtn cta-btn align-middle btn-width" style="cursor: pointer;">Choose Video
+                    File</label>
+                <button class="btn btn-secondary" hidden>Submit</button>
+            </form>
+            
+            <a href="{% url 'live' %}" class="fBtn cta-btn align-middle btn-width border-radius">Camera</a>
+            
+        </div>
+        <!-- script for auto submit -->
+        <script type="text/javascript">
+            document.getElementById("vid_form").onchange = function () {
+                // submitting the form
+                document.getElementById("vid_form").submit();
+            };
+        </script>
+    </section>
+
+</main><!-- End #main -->
+
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <h3 class="foot-text" id="glow">Cyber Vision</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <img src="{% static 'img/favicon.png' %}" alt="logo">
+            <h1 id="nav-title">Cyber Vision</h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Logout</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<div class="container-fluid result-cont">
+    <header class="mb-2">
+        <div class="row">
+            <span class="col">
+                <h1 class="text-center" style="margin: 0;">Result</h1>
+            </span>
+        </div>
+    </header>
+    <hr class="my-1 mb-3">
+    <div class="d-flex justify-content-center align-items-center">
+        <div style="max-width: 900px; margin: auto;">
+            <img src="{% url 'video_feed' %}" 
+                id="vidHolder"
+                style="
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    border-radius: 10px;
+                ">
+        </div>
+    </div>
+</div>
+{% endblock body %}

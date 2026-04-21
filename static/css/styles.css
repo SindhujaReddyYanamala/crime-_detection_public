@@ -1,0 +1,114 @@
+* {
+    font-family: sans-serif;
+}
+
+/* Header Section */
+header {
+    top: 0;
+    width: 100vw;
+    height: 40px;
+    -webkit-app-region: drag;
+}
+
+#stickynav {
+    position: fixed;
+    right: 0;
+    width: fit-content;
+    -webkit-app-region: no-drag;
+}
+
+.ctrlBtn {
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.ctrlBtn i {
+    font-size: 18px;
+    color: white;
+}
+
+.ctrlBtn:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Main Body */
+body {
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+}
+
+#backLink {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* My CSS */
+.nav-section-1 a img {
+    width: 50px;
+}
+
+.navbar ul li,
+.navbar ul li a {
+    cursor: pointer;
+}
+
+.camera {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.btn-width {
+    width: 250px;
+}
+
+.result-cont {
+    background: url("../img/hero-bg.png");
+    height: 87vh;
+}
+
+.text-center {
+    text-align: center;
+    color: white;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.border-radius {
+    border-radius: 3px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cont-live {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.start-cam {
+    border: none;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.live {
+    background-image: url('../img/hero-bg.png');
+    padding: 29vh 0vh;
+}

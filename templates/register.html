@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block body %}
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <img src="../static/img/favicon.png" alt="logo">
+            <h1 id="nav-title">Cyber Vision</h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+                <li><a class="nav-link scrollto active" href="{% url 'register' %}">Register</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<section class="page-section" id="register">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase h2 text-secondary mt-3">Register Here</h2>
+
+        <!-- Contact Section Form-->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-5">
+                <form id="registerForm" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="fname" name="fname" type="text" placeholder="John" required />
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="lname" name="lname" type="text" placeholder="Deo" />
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="username" name="username" type="email"
+                            placeholder="name@example.com" required />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="mobile" name="mobile" type="mobile" placeholder="9999999999"
+                            required />
+                        <label for="Mobile">Mobile</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password1" name="password1" type="password"
+                            placeholder="Password" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <!-- Password input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password2" name="password2" type="password"
+                            placeholder="password" required />
+                        <label for="password">Confirm Password</label>
+                    </div>
+                    <button class="w-100 btn btn-primary btn-xl" type="submit">
+                        Register Here
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

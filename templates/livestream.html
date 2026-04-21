@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <img src="{% static 'img/favicon.png' %}" alt="logo">
+            <h1 id="nav-title">Cyber Vision</h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li>
+                    <a class="nav-link scrollto" 
+                       href="javascript:void(0)" 
+                       onclick="closeCamera()" 
+                       style="font-size:15px; color:#ff4d4d; font-weight:bold;">
+                        Close Camera
+                    </a>
+                </li>
+
+                <li><a class="nav-link scrollto" href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Logout</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<div class="container-fluid result-cont">
+    <header class="mb-2">
+        <h1 class="text-center"> Live AI Monitoring</h1>
+    </header>
+    <hr class="my-1 mb-3">
+
+    <div class="d-flex justify-content-center align-items-center">
+        <!-- CAMERA STREAM -->
+        <img src="{% url 'live_crime' %}" id="vidHolder" style="width:42%; border-radius:10px;">
+    </div>
+</div>
+
+<script>
+function closeCamera() {
+    // Stop the MJPEG stream
+    document.getElementById("vidHolder").src = "";
+
+    // Redirect after stopping
+    setTimeout(function(){
+        window.location.href = "{% url 'dashboard' %}";
+    }, 300);
+}
+</script>
+
+{% endblock body %}
