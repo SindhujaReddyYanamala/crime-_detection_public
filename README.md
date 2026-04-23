@@ -5,7 +5,12 @@
 The Crime Detection System is an AI-based project designed to detect criminal activities such as weapons or suspicious behavior using images/videos. It uses deep learning models for real-time detection.
 
 ---
+🎥 Project Demo
 
+Watch the project demo here:
+👉 https://youtu.be/JcYzxQT1ts4?si=uPCrhosm9mHqgzB2
+
+---
 ## 🚀 Features
 
 * Detects weapons (guns, knives, etc.)
